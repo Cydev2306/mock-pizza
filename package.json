@@ -4,9 +4,14 @@
   "description": "mock api pizza",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
+      "start": "NODE_ENV=production node app.js",
+    },
+  "repository": {
+  "type": "git",
+  "url": "git+https://github.com/Cydev2306/mock-pizza.git"
+
+},
+  "author": "cyril",
   "license": "ISC",
   "dependencies": {
     "express": "^4.14.0",
