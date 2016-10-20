@@ -13,7 +13,7 @@ var headers = {
 var port = process.env.PORT || 3000;
 
 app.use(morgan('dev'));
-app.use(slow(true));
+app.use(slow(process.env.SLOW||false));
 
 app.get('/mock/orders', function(req, res) {
   console.log("orders")
