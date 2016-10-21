@@ -9,9 +9,12 @@ var headers = {
     Authorization: `luc.cyril`,
 };
 var port = process.env.PORT || 3000;
-
+var enableSlow = false
+if(process.env.SLOW == "true"){
+  enableSlow = true
+}else enableSlow = false
 app.use(morgan('dev'));
-app.use(slow(process.env.SLOW||false));
+app.use(slow(enableSlow));
 var orders =[{"id":1,"pizza":{"id":1,"name":"Margharita","price":1320},"status":"finished","CreatedAt":"2016-10-19T12:01:55.387698613Z"},
         {"id":2,"pizza":{"id":1,"name":"Margharita","price":1320},"status":"finished","CreatedAt":"2016-10-19T12:07:27.898098861Z"},
         {"id":3,"pizza":{"id":2,"name":"Regina","price":1240},"status":"finished","CreatedAt":"2016-10-19T12:07:31.380289161Z"},
